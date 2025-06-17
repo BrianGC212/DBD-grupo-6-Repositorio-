@@ -51,5 +51,9 @@ public class VisualizarProgramacionesDto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 4b5e2ba88f2ebe9c94f6060fee64808b97bf5585
