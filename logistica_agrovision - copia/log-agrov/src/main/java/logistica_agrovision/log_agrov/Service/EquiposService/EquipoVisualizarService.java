@@ -18,13 +18,13 @@ public class EquipoVisualizarService {
     
     public List<Map<String, Object>> obtenerEquipos() {
         String sql = "SELECT " +
-                     "e.COD_Equipos AS \"Código de Máquina\", " +
-                     "e.Nombre_equipo AS \"Nombre del Equipo\", " +
-                     "tm.Descripcion AS \"Tipo de Máquina\", " +
-                     "ee.Descripcion AS \"Estado de Máquina\", " +
-                     "e.Fecha_registro AS \"Fecha de Registro\", " +
-                     "CASE WHEN ee.ID_Estado_equipo = 'FSE' THEN e.Fecha_salida ELSE NULL END AS \"Fecha de Salida\", " +
-                     "e.Detalle AS \"Detalle\" " +
+                     "e.COD_Equipos AS \"codigoMaquina\", " +
+                     "e.Nombre_equipo AS \"equipo\", " +
+                     "tm.Descripcion AS \"tipoMaquina\", " +
+                     "ee.Descripcion AS \"estadoMaquina\", " +
+                     "e.Fecha_registro AS \"fechaRegistro\", " +
+                     "CASE WHEN ee.ID_Estado_equipo = 'FSE' THEN e.Fecha_salida ELSE NULL END AS \"fechaSalida\", " +
+                     "e.Detalle AS \"detalle\" " +
                      "FROM EQUIPOS e " +
                      "JOIN Tipo_Maquina tm ON e.ID_Tipo_Maquina = tm.ID_Tipo_Maquina " +
                      "JOIN Estado_Equipo ee ON e.ID_Estado_equipo = ee.ID_Estado_equipo " +
