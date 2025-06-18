@@ -3,6 +3,7 @@ package logistica_agrovision.log_agrov.Dto.RecepcionDto;
 public class VisualizarLotesDto {
 
     private String codLote;
+    private String nombreProducto;
     private String tipoDelLote;
     private String fechaProduccion;
     private Double cantidad;
@@ -15,6 +16,14 @@ public class VisualizarLotesDto {
 
     public void setCodLote(String codLote) {
         this.codLote = codLote;
+    }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     public String getTipoDelLote() {

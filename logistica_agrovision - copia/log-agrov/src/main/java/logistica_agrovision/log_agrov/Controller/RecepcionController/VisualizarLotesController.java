@@ -20,4 +20,10 @@ public class VisualizarLotesController {
         List<Map<String, Object>> lotes = visualizarLotesService.obtenerLotes();
         return ResponseEntity.ok(lotes);
     }
+    @GetMapping("/buscar")
+    public ResponseEntity<List<Map<String, Object>>> buscarLotesPorProducto(@RequestParam("nombre") String nombreProducto) {
+    List<Map<String, Object>> lotes = visualizarLotesService.buscarLotesPorProducto(nombreProducto);
+    return ResponseEntity.ok(lotes);
+}
+
 }
