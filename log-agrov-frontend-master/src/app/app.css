@@ -1,0 +1,86 @@
+/* LOGISTICA_AGROVISION/log-agrov-frontend/src/app/app.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0; /* Un gris claro para el fondo general */
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow: hidden; /* Evita scroll no deseado */
+}
+
+/* Estilos del Sidebar (Menú Lateral) */
+.sidebar {
+  width: 250px; /* Ancho del menú */
+  background-color: #2e8b57; /* Verde oscuro del menú */
+  color: white;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  flex-shrink: 0; /* Evita que el sidebar se encoja */
+}
+
+.menu-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav li {
+  margin-bottom: 5px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  border-left: 5px solid transparent; /* Para el efecto de activo */
+}
+
+.sidebar nav a:hover {
+  background-color: #3cb371; /* Un verde un poco más claro al pasar el ratón */
+}
+
+.sidebar nav a.active {
+  background-color: #3cb371; /* Verde activo */
+  border-left-color: #ffd700; /* Borde amarillo para el ítem activo */
+  font-weight: bold;
+}
+
+/* Estilos del Área de Contenido Principal */
+.content-area {
+  flex-grow: 1; /* Ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
+  background-color: #e0e0e0; /* Fondo gris claro del área de contenido */
+}
+
+.header {
+  background-color: #3a3a3a; /* Fondo gris oscuro del encabezado */
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.2em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px; /* Espacio entre el header y el contenido */
+}
+
+.main-content-router {
+  padding: 20px;
+  flex-grow: 1; /* Para que el router-outlet ocupe el espacio restante */
+  overflow-y: auto; /* Si el contenido es muy largo, permite scroll */
+}
