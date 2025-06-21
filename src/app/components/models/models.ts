@@ -13,3 +13,13 @@ export interface Historial {
     estado: string;
     detalle: string;
 }
+
+export interface Lote {
+    cod_lote: string
+    nombre_producto: string
+    tipo_del_lote: string
+    fecha_produccion: string
+    cantidad: number
+    unidad: string
+    estado_lote: string
+}

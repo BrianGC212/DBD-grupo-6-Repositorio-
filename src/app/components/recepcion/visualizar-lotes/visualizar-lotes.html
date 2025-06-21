@@ -1,0 +1,26 @@
+<h2>Lotes Aprobados</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Producto</th>
+      <th>Tipo</th>
+      <th>Fecha Producción</th>
+      <th>Cantidad</th>
+      <th>Unidad</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lote of lotes">
+      <td>{{ lote.cod_lote }}</td>
+      <td>{{ lote.nombre_producto }}</td>
+      <td>{{ lote.tipo_del_lote }}</td>
+      <td>{{ lote.fecha_produccion }}</td>
+      <td>{{ lote.cantidad }}</td>
+      <td>{{ lote.unidad }}</td>
+      <td>{{ lote.estado_lote }}</td>
+    </tr>
+  </tbody>
+</table>
