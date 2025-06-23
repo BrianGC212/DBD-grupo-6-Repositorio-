@@ -1,0 +1,27 @@
+<div class="layout-container">
+  <app-sidebar></app-sidebar>
+
+  <div class="main-content">
+    <h1 class="recepcion-title">Módulo de Recepción</h1>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Registro de Lotes y Recepción</h3>
+        <p>Accede al registro y visualización de lotes recepcionados.</p>
+        <button class="btn btn-green" (click)="irA('registro-lotes')">Ir</button>
+      </div>
+
+      <div class="card">
+        <h3>Control de Calidad (Embalaje)</h3>
+        <p>Gestiona y registra el control de calidad del embalaje.</p>
+        <button class="btn btn-aqua" (click)="irA('control-calidad')">Ir</button>
+      </div>
+
+      <div class="card">
+        <h3>Generación de Reportes de Recepción</h3>
+        <p>Genera reportes detallados de las recepciones realizadas.</p>
+        <button class="btn btn-purple" (click)="irA('reportes-recepcion')">Ir</button>
+      </div>
+    </div>
+  </div>
+</div>

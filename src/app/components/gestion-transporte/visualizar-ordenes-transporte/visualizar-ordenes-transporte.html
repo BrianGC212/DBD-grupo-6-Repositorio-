@@ -1,0 +1,99 @@
+<div class="main-layout">
+    <app-sidebar></app-sidebar>
+
+    <div class="container">
+    <h1>Órdenes de Transporte</h1>
+    <div class="acciones-superiores">
+    <button routerLink="/gestion-transporte/registrar-orden"
+            style="padding: 8px 16px; margin-bottom: 20px; background-color: #2ecc71; color: white; border: none; border-radius: 4px; cursor: pointer;">
+    Registrar Nueva Orden
+    </button>
+</div>
+    <table>
+        <thead>
+        <tr>
+            <th>Código de Orden</th>
+            <th>Código de Empleado</th>
+            <th>Fecha de Salida</th>
+            <th>Hora de Salida</th>
+            <th>Fecha Finalizada</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let orden of ordenes">
+            <td>{{ orden.cod_orden_transporte }}</td>
+            <td>{{ orden.cod_empleado }}</td>
+            <td>{{ orden.fecha_salida }}</td>
+            <td>{{ orden.hora_salida }}</td>
+            <td>{{ orden.fecha_finalizada || '—' }}</td>
+            <td>{{ orden.descripcion }}</td>
+            <td>
+            <button (click)="verSeguimiento(orden.cod_orden_transporte)">Ver seguimiento</button>
+            <button style="margin-left: 6px;" (click)="verGuiasOrden(orden.cod_orden_transporte)">Ver guías</button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+<!-- MODAL DE SEGUIMIENTO -->
+  <div *ngIf="showSeguimientoModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h2>Seguimiento de Orden {{ ordenActual }}</h2>
+        <button class="close-btn" (click)="cerrarSeguimientoModal()">✖</button>
+        </div>
+
+        <table class="modal-table">
+        <thead>
+            <tr>
+            <th>Empleado</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of seguimientoDetalle">
+            <td>{{ s.cod_empleado }}</td>
+            <td>{{ s.descripcion }}</td>
+            <td>{{ s.fecha_registro }}</td>
+            <td>{{ s.hora_registro }}</td>
+            <td>{{ s.estado }}</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div class="modal-footer">
+        <button (click)="cerrarSeguimientoModal()">Cerrar</button>
+        </div>
+    </div>
+    </div>
+    <!-- MODAL DE GUÍAS DE ORDEN -->
+    <div *ngIf="mostrarModalGuias" class="modal-overlay">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h2>Guías asociadas a la Orden {{ ordenActual }}</h2>
+        <button class="close-btn" (click)="cerrarModalGuias()">✖</button>
+    </div>
+    <table class="modal-table">
+        <thead>
+        <tr><th>Código de Guía</th></tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let guia of guiasDeOrden">
+            <td>{{ guia.cod_guia_remision }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="modal-footer">
+        <button (click)="cerrarModalGuias()">Cerrar</button>
+    </div>
+        </div>
+</div>
+
+</div>

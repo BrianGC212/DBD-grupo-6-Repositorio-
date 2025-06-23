@@ -1,0 +1,39 @@
+<div class="main-layout">
+    <app-sidebar></app-sidebar>
+
+    <div class="container">
+    <h1>Registrar Orden de Transporte</h1>
+
+    <form [formGroup]="ordenForm" (ngSubmit)="registrar()">
+        <div class="form-group">
+        <label>Fecha de Salida:</label>
+        <input type="date" formControlName="fecha_salida" />
+        </div>
+
+        <div class="form-group">
+        <label>Hora de Salida:</label>
+        <input type="time" formControlName="hora_salida" />
+        </div>
+
+        <div class="form-group">
+        <label>Código de Empleado:</label>
+        <input type="text" formControlName="cod_empleado" />
+        </div>
+
+        <div formArrayName="guiasRemision">
+        <div *ngFor="let grupo of guiasRemision.controls; let i = index" [formGroupName]="i" class="form-group">
+            <label>Guía {{ i + 1 }}:</label>
+            <input type="text" formControlName="codigo" placeholder="Ej: GR000001" />
+          <button type="button" (click)="eliminarGuia(i)" *ngIf="guiasRemision.length > 1">Eliminar</button>
+        </div>
+        </div>
+
+        <button type="button" (click)="agregarGuia()">+ Agregar otra guía</button>
+
+        <br /><br />
+        <button type="submit" [disabled]="ordenForm.invalid">Registrar</button>
+    </form>
+
+    <p *ngIf="mensaje" style="margin-top: 20px;">{{ mensaje }}</p>
+    </div>
+</div>
