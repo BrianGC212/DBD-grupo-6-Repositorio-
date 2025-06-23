@@ -32,3 +32,4 @@ export interface recepcion {
     unidad: string
     estado_recepcion: string
 }
+
