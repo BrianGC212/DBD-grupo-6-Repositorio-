@@ -1,1 +1,42 @@
-<h2>Pantalla de Control de Calidad (Embalaje)</h2>
+<div class="layout-container">
+  <app-sidebar></app-sidebar>
+    <div class="control-container">
+    <h1 class="titulo">Control de Calidad - Recepciones</h1>
+
+    <div *ngIf="recepciones.length === 0" class="mensaje-vacio">
+        No hay recepciones registradas.
+    </div>
+
+    <div *ngIf="recepciones.length > 0" class="tabla-contenedor">
+        <table class="tabla">
+        <thead>
+            <tr>
+            <th>Código</th>
+            <th>Producto</th>
+            <th>Descripción del Lote</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recepciones">
+            <td>{{ r.cod_recepcion }}</td>
+            <td>{{ r.nombre_producto }}</td>
+            <td>{{ r.descripcion_lote }}</td>
+            <td>{{ r.cantidad }}</td>
+            <td>{{ r.unidad }}</td>
+            <td>
+                <span [ngClass]="{
+                'estado-aprobado': r.estado_recepcion === 'Aprobado',
+                'estado-observado': r.estado_recepcion === 'Observado'
+                }">
+                {{ r.estado_recepcion }}
+                </span>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</div>

@@ -23,3 +23,12 @@ export interface Lote {
     unidad: string
     estado_lote: string
 }
+
+export interface recepcion {
+    cod_recepcion: string
+    nombre_producto: string
+    descripcion_lote: string
+    cantidad: number
+    unidad: string
+    estado_recepcion: string
+}
