@@ -1,0 +1,62 @@
+<div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+    <h1>INFORMES DE ENTREGA</h1>
+    <!-- Botón para ir a registrar nuevo informe -->
+    <div style="margin-bottom: 16px;">
+        <button routerLink="/gestion-transporte/registrar-informe-entrega" style="padding: 6px 12px; background-color: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Registrar Nuevo Informe
+        </button>
+    </div>
+    <!-- Barra de búsqueda -->
+    <div style="margin-bottom: 20px;">
+        <input
+        type="text"
+        [(ngModel)]="codigoBusqueda"
+        placeholder="Buscar por código de guía de remisión..."
+        style="padding: 6px; width: 250px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+        <button
+        (click)="buscarPorCodigo()"
+        style="padding: 6px 12px; margin-left: 8px;"
+        >
+        Buscar
+        </button>
+        <button
+        (click)="cargarInformes()"
+        style="padding: 6px 12px; margin-left: 4px; background-color: #777; color: white;"
+        >
+        Limpiar
+        </button>
+    </div>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Código Guía</th>
+            <th>Empleado</th>
+            <th>Receptor</th>
+            <th>DNI Receptor</th>
+            <th>Fecha Entrega</th>
+            <th>Hora Entrega</th>
+            <th>Observación</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let informe of informes">
+            <td>{{ informe.cod_guia_remision }}</td>
+            <td>{{ informe.cod_empleado }}</td>
+            <td>{{ informe.nombre_receptor }}</td>
+            <td>{{ informe.dni_receptor }}</td>
+            <td>{{ informe.fecha_entrega }}</td>
+            <td>{{ informe.hora_entrega }}</td>
+            <td>
+            <span [ngClass]="{
+                'observacion-resaltada': informe.observacion
+            }">{{ informe.observacion || '—' }}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

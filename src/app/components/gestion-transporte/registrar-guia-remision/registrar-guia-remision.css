@@ -1,0 +1,62 @@
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+app-sidebar {
+    flex: 0 0 220px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f5f5f5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+}
+
+input, button {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+.volver-container {
+    margin-top: 20px;
+}
+
+.btn.btn-secondary {
+    background-color: #999;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn.btn-secondary:hover {
+    background-color: #7a7a7a;
+}

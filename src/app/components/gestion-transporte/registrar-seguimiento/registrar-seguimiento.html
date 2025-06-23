@@ -1,0 +1,42 @@
+<div class="main-layout">
+    <app-sidebar></app-sidebar>
+
+    <div class="container">
+    <h1>Registrar Seguimiento</h1>
+
+    <form [formGroup]="seguimientoForm" (ngSubmit)="registrarSeguimiento()">
+        <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" formControlName="descripcion" required />
+        </div>
+
+        <div class="form-group">
+        <label for="estado">Estado:</label>
+        <select id="estado" formControlName="id_estado_seguimiento" required>
+            <option value="" disabled selected>Selecciona un estado</option>
+            <option value="T">En tránsito</option>
+            <option value="P">Realización de una parada</option>
+            <option value="E">Realización de una entrega</option>
+            <option value="A">Accidente de tránsito</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label for="orden">Código de Orden:</label>
+        <input type="text" id="orden" formControlName="cod_orden_transporte" required />
+        </div>
+
+        <button type="submit" [disabled]="seguimientoForm.invalid">Registrar</button>
+    </form>
+    <button
+        style="margin-top: 10px; padding: 6px 12px; border: none; background-color: #3498db; color: white; border-radius: 4px; cursor: pointer;"
+        routerLink="/gestion-transporte/seguimiento"
+        >
+        ← Volver a seguimiento
+        </button>
+    <div *ngIf="mensaje" style="margin-top: 20px;">
+        <p style="color: green; font-weight: bold;">✅ {{ mensaje }}</p>
+    </div>
+
+    </div>
+</div>

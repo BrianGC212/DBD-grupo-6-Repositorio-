@@ -1,0 +1,84 @@
+.main-layout {
+    display: flex;
+    height: 100vh;
+}
+
+app-sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.container {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+input,
+select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button[type='submit'] {
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type='submit']:hover {
+    background-color: #2980b9;
+}
+
+button[routerlink] {
+    background-color: #2ecc71;
+    margin-top: 12px;
+    padding: 8px 14px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[routerlink]:hover {
+    background-color: #27ae60;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 12px;
+}
