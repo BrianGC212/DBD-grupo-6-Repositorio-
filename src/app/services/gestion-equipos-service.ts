@@ -9,7 +9,7 @@ import { Historial, Maquina } from '../components/models/models';
 export class GestionEquiposService {
   URL_API: string = 'http://localhost:8080/equipos/'
   constructor(private http: HttpClient) { }
-
+  
   getListado(): Observable<Maquina[]> {
     return this.http.get<Maquina[]>(this.URL_API + 'listar').pipe(map(res => res));
   }
