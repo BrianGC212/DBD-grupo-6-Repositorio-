@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/recepcion")
 public class RegistroRecepcionController {
@@ -15,15 +15,15 @@ public class RegistroRecepcionController {
     @Autowired
     private RegistroRecepcionService registroRecepcionService;
 
-    @GetMapping("/lote/{idLote}")
-    public ResponseEntity<Map<String, Object>> obtenerDatosLote(@PathVariable int idLote) {
-        Map<String, Object> datos = registroRecepcionService.obtenerDatosDelLote(idLote);
+    @GetMapping("/lote/{cod_lote}")
+    public ResponseEntity<Map<String, Object>> obtenerDatosLote(@PathVariable String cod_lote) {
+        Map<String, Object> datos = registroRecepcionService.obtenerDatosDelLote(cod_lote);
         return ResponseEntity.ok(datos);
     }
 
     @PostMapping("/aprobar")
     public ResponseEntity<String> aprobarRecepcion(@RequestBody RegistroRecepcionDto dto) {
-        registroRecepcionService.registrarRecepcionAprobada(dto.getIdLote(), dto.getCantidadRecibida());
+        registroRecepcionService.registrarRecepcionAprobada(dto.getCodLote(), dto.getCantidadRecibida());
         return ResponseEntity.ok("Recepción registrada como Aprobada.");
     }
 
@@ -32,7 +32,7 @@ public class RegistroRecepcionController {
         if (dto.getObservaciones() == null || dto.getObservaciones().trim().isEmpty()) {
             return ResponseEntity.badRequest().body("La observación es obligatoria para un lote observado.");
         }
-        registroRecepcionService.registrarRecepcionObservada(dto.getIdLote(), dto.getCantidadRecibida(), dto.getObservaciones());
+        registroRecepcionService.registrarRecepcionObservada(dto.getCodLote(), dto.getCantidadRecibida(), dto.getObservaciones());
         return ResponseEntity.ok("Recepción registrada como Observada.");
     }
 }

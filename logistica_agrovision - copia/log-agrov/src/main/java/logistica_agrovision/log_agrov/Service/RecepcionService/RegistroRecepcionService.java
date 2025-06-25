@@ -13,7 +13,7 @@ public class RegistroRecepcionService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public Map<String, Object> obtenerDatosDelLote(int idLote) {
+    public Map<String, Object> obtenerDatosDelLote(String codLote) {
         String sql = "SELECT " +
                      "l.cod_lote, " +
                      "p.nombre_producto, " +
@@ -21,32 +21,32 @@ public class RegistroRecepcionService {
                      "l.unidad " +
                      "FROM Lote l " +
                      "JOIN Producto p ON l.id_producto = p.id_producto " +
-                     "WHERE l.id_lote = ?";
-        return jdbcTemplate.queryForMap(sql, idLote);
+                     "WHERE l.cod_lote = ?";
+        return jdbcTemplate.queryForMap(sql, codLote);
     }
 
-    public boolean registrarRecepcionAprobada(int idLote, double cantidadRecibida) {
+    public boolean registrarRecepcionAprobada(String codLote, double cantidadRecibida) {
         try {
             int count = jdbcTemplate.queryForObject("SELECT COUNT(1) FROM Recepcion", Integer.class);
             String codRecepcion = "REC" + String.format("%05d", count + 1);
 
             String sql = "INSERT INTO Recepcion (cod_recepcion, fecha_registro, cantidad_recibida, id_estado_recepcion, observaciones, id_lote) " +
-                         "VALUES (?, CURRENT_DATE, ?, 'A', NULL, ?)";
-            jdbcTemplate.update(sql, codRecepcion, cantidadRecibida, idLote);
+                         "VALUES (?, CURRENT_DATE, ?, 'A', NULL, (SELECT id_lote from Lote WHERE cod_lote = ?))";
+            jdbcTemplate.update(sql, codRecepcion, cantidadRecibida, codLote);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
 
-    public boolean registrarRecepcionObservada(int idLote, double cantidadRecibida, String observaciones) {
+    public boolean registrarRecepcionObservada(String codLote, double cantidadRecibida, String observaciones) {
         try {
             int count = jdbcTemplate.queryForObject("SELECT COUNT(1) FROM Recepcion", Integer.class);
             String codRecepcion = "REC" + String.format("%05d", count + 1);
 
             String sql = "INSERT INTO Recepcion (cod_recepcion, fecha_registro, cantidad_recibida, id_estado_recepcion, observaciones, id_lote) " +
-                         "VALUES (?, CURRENT_DATE, ?, 'O', ?, ?)";
-            jdbcTemplate.update(sql, codRecepcion, cantidadRecibida, observaciones, idLote);
+                         "VALUES (?, CURRENT_DATE, ?, 'O', ?, (SELECT id_lote from Lote WHERE cod_lote = ?))";
+            jdbcTemplate.update(sql, codRecepcion, cantidadRecibida, observaciones, codLote);
             return true;
         } catch (Exception e) {
             return false;

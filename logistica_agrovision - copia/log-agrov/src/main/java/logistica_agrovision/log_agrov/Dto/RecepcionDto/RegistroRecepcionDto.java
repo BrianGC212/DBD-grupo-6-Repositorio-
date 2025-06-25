@@ -1,18 +1,17 @@
 package logistica_agrovision.log_agrov.Dto.RecepcionDto;
 
 public class RegistroRecepcionDto {
-    private int idLote;
+    private String codLote;
     private double cantidadRecibida;
     private String observaciones;
 
-    public int getIdLote() {
-        return idLote;
+    public String getCodLote() {
+        return codLote;
     }
 
-    public void setIdLote(int idLote) {
-        this.idLote = idLote;
+    public void setCodLote(String codLote) {
+        this.codLote = codLote;
     }
-
     public double getCantidadRecibida() {
         return cantidadRecibida;
     }
