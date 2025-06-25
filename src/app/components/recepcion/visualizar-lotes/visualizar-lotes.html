@@ -1,26 +1,91 @@
-<h2>Lotes Aprobados</h2>
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
 
-<table>
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Producto</th>
-      <th>Tipo</th>
-      <th>Fecha Producción</th>
-      <th>Cantidad</th>
-      <th>Unidad</th>
-      <th>Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let lote of lotes">
-      <td>{{ lote.cod_lote }}</td>
-      <td>{{ lote.nombre_producto }}</td>
-      <td>{{ lote.tipo_del_lote }}</td>
-      <td>{{ lote.fecha_produccion }}</td>
-      <td>{{ lote.cantidad }}</td>
-      <td>{{ lote.unidad }}</td>
-      <td>{{ lote.estado_lote }}</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="lotes-container">
+    <h2 class="titulo">Lotes Aprobados</h2>
+
+    <button (click)="mostrarFormulario = !mostrarFormulario" class="btn-agregar">
+      {{ mostrarFormulario ? 'Cancelar' : 'Agregar Lote' }}
+    </button>
+
+    <div *ngIf="mostrarFormulario" class="formulario-lote">
+      <form (ngSubmit)="registrarLote()" #form="ngForm">
+        <label>
+          ID Tipo Lote:
+          <input type="number" name="idTipoLote" [(ngModel)]="nuevoLote.idTipoLote" required />
+        </label>
+        <label>
+          ID Producto:
+          <input type="text" name="idProducto" [(ngModel)]="nuevoLote.idProducto" required />
+        </label>
+        <label>
+          Cantidad:
+          <input type="number" name="cantidadTotal" [(ngModel)]="nuevoLote.cantidadTotal" required />
+        </label>
+        <label>
+          Unidad:
+          <input type="text" name="unidad" [(ngModel)]="nuevoLote.unidad" required />
+        </label>
+        <label>
+          Fecha Producción:
+          <input type="date" name="fechaProduccion" [(ngModel)]="nuevoLote.fechaProduccion" required />
+        </label>
+        <label>
+          Fecha Vencimiento:
+          <input type="date" name="fechaVencimiento" [(ngModel)]="nuevoLote.fechaVencimiento" required />
+        </label>
+
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+
+    <div class="tabla-contenedor">
+      <table class="tabla">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Producto</th>
+            <th>Tipo</th>
+            <th>Fecha Producción</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lote of lotes">
+            <td>{{ lote.cod_lote }}</td>
+            <td>{{ lote.nombre_producto }}</td>
+            <td>{{ lote.tipo_del_lote }}</td>
+            <td>{{ lote.fecha_produccion }}</td>
+            <td>{{ lote.cantidad }}</td>
+            <td>{{ lote.unidad }}</td>
+            <td>{{ lote.estado_lote }}</td>
+            <td>
+              <button (click)="seleccionarLoteParaRecepcion(lote.cod_lote)">Recepcionar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="mostrarFormularioRecepcion" class="formulario-recepcion">
+        <h3>Registrar Recepción - {{ loteSeleccionado?.cod_lote }} / {{ loteSeleccionado?.nombre_producto }}</h3>
+
+        <form #formRecepcion="ngForm">
+          <label>Cantidad Recibida:
+            <input type="number" [(ngModel)]="datosRecepcion.cantidadRecibida" name="cantidadRecibida" required />
+          </label>
+
+          <label>Observaciones (solo si es observado):
+            <input type="text" [(ngModel)]="datosRecepcion.observaciones" name="observaciones" />
+          </label>
+
+          <button type="button" (click)="enviarRecepcion('aprobado')">Aprobar</button>
+          <button type="button" (click)="enviarRecepcion('observado')">Observar</button>
+          <button type="button" (click)="cancelarRecepcion()">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,6 +33,13 @@ export interface recepcion {
     estado_recepcion: string
 }
 
+export interface LoteRecepcionVista {
+  cod_lote: string;
+  nombre_producto: string;
+  cantidad: number;
+  unidad: string;
+}
+
 export interface OrdenTransporte {
     cod_orden_transporte: string;
     cod_empleado: string;

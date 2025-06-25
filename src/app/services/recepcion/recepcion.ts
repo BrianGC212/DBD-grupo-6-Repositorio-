@@ -8,11 +8,23 @@ import { recepcion } from '../../components/models/models';
 })
 export class RecepcionService {
 
-  private apiUrl = 'http://localhost:8080/recepciones'; // Cambia esto por tu URL real del backend
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
+  // Para visualizar recepciones (ruta especial /recepciones)
   visualizarRecepciones(): Observable<recepcion[]> {
-    return this.http.get<recepcion[]>(`${this.apiUrl}/visualizar`);
+    return this.http.get<recepcion[]>(`${this.baseUrl}/recepciones/visualizar`);
+  }
+
+  // Para registrar recepción como "aprobado"
+  aprobarRecepcion(data: any): Observable<string> {
+    return this.http.post(`${this.baseUrl}/recepcion/aprobar`, data, { responseType: 'text' });
+  }
+
+  // Para registrar recepción como "observado"
+  observarRecepcion(data: any): Observable<string> {
+    return this.http.post(`${this.baseUrl}/recepcion/observar`, data, { responseType: 'text' });
   }
 }
+
