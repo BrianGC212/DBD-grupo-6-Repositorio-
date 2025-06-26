@@ -1,0 +1,59 @@
+<app-sidebar></app-sidebar>
+<div class="asignacion-container">
+  <h1>PROGRAMAR MANTENIMIENTO DE EQUIPOS</h1>
+  
+  <div class="formulario-asignacion">
+    <div class="form-row">
+      <label for="equipo">Seleccionar Equipo:</label>
+      <select id="equipo" class="form-control" [(ngModel)]="dto.codigoEquipo">
+        <option *ngFor="let equipo of listadoEquipos" [value]="equipo.idEquipo">
+          {{equipo.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="fecha-fin">Fecha de Envío a Mantenimiento:</label>
+      <input id="fecha-fin" type="date" class="form-control" [(ngModel)]="dto.fechaInicio">
+    </div>
+    
+    <div class="form-row">
+      <label for="equipo">Estado del Equipo:</label>
+      <select id="equipo" class="form-control" [(ngModel)]="dto.idEstadoEquipo">
+        <option *ngFor="let estado of listadoEstadosEquipo" [value]="estado.idEstado">
+          {{estado.descripcion}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="equipo">Tipo de Mantenimiento:</label>
+      <select id="equipo" class="form-control" [(ngModel)]="dto.idEstadoMantenimiento">
+        <option *ngFor="let estado of listadoEstadosMantenimiento" [value]="estado.idEstado">
+          {{estado.descripcion}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="responsable">Empresa encargada:</label>
+      <input id="responsable" type="text" class="form-control" 
+             placeholder="Ingrese nombre de la empresa" [(ngModel)]="dto.empresaEncargada">
+    </div>
+
+    <div class="form-row">
+      <label for="equipo">Máquina sustituta:</label>
+      <select id="equipo" class="form-control" [(ngModel)]="dto.codigoMaquinaSustituta">
+        <option *ngFor="let maquinola of listadoMaquinasSustitutas" [value]="maquinola.id_maq_sust">
+          {{maquinola.nombre}}
+        </option>
+      </select>
+    </div>
+  
+  <div class="programaciones-section">
+    <div class="botones-accion">
+      <button class="btn-programar" (click)="asignarMantenimiento()">Programar Mantenimiento</button>
+      <button class="btn-cancelar" routerLink="/visualizar-programaciones">Programaciones</button>
+    </div>
+  </div>
+</div>

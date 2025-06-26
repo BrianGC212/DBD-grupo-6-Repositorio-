@@ -1,0 +1,122 @@
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="content-container">
+    <!-- Barra de búsqueda y filtros -->
+    <!-- <div class="search-container">
+      <div class="search-bar">
+        <input #searchInput 
+       type="text" 
+       [(ngModel)]="searchTerm"
+       (change)="loadPickings(searchTerm)" 
+       placeholder="Buscar..." />
+        <span class="search-icon">🔍</span>
+      </div>
+    </div> -->
+
+    <!-- Tabla de pedidos -->
+    <div class="table-container">
+      <h1>DETALLE DE PEDIDOS</h1>
+      
+      <table class="pedidos-table">
+        <thead>
+          <tr>
+            <th>Pedido</th>
+            <th>Empleado</th>
+            <th>Fecha Límite</th>
+            <th>Destino</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pickings">
+            <td>{{ pedido.pedido }}</td>
+            <td>{{ pedido.nombre_empleado }}</td>
+            <td>{{ pedido.fecha_limite | date:'dd/MM/yyyy' }}</td>
+            <td>{{ pedido.destino }}</td>
+            <td>
+              <span class="estado-badge" [class.en-proceso]="pedido.estado === 'En proceso'">
+                {{ pedido.estado }}
+              </span>
+            </td>
+            <td>
+              <button class="action-btn ver-detalle" (click)="openModal()">Ver</button>
+              <!-- <button class="action-btn editar">Editar</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-content">
+    <h2>Lista de Productos</h2>
+
+    <table class="tabla-modal">
+      <thead>
+        <tr>
+          <th>ID Producto</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Área</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of resultados">
+          <td>{{ item.id_producto }}</td>
+          <td>{{ item.producto }}</td>
+          <td>{{ item.cantidad }}</td>
+          <td>{{ item.area }}</td>
+          <td>{{ item.estado }}
+            <button (click)="openEmpaqueModal(item)" *ngIf="item.estado==='En proceso'">⊕</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="close-btn" (click)="closeModal()">Cerrar</button>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showEmpaqueModal">
+  <div class="modal-box">
+    <h2 class="modal-header">EMPAQUE</h2>
+
+    <div class="modal-body">
+      <label><strong>Producto:</strong></label>
+      <input [value]="productoReferencia?.producto" disabled class="disabled-input" />
+
+      <label>Nombre de empaque :</label>
+      <input [(ngModel)]="nombreEmpaque" />
+
+      <label>Tipo de empaque: </label>
+        <select [(ngModel)]="id_tipo_empaque">
+          <option value="P">Parihuela</option>
+          <option value="S">Saco</option>
+          <option value="C">Caja</option>
+          <option value="M">Malla</option>
+          <option value="B">Bolsa Plástica</option>
+        </select>
+
+      <label>Peso Neto:</label>
+      <input type=number [(ngModel)]="pesoNeto" />
+
+      <label>Descripción :</label>
+      <textarea [(ngModel)]="descripcion"></textarea>
+
+      <label>Código de Lote: </label>
+      <select [(ngModel)]="codigoLote" (change)="onLoteChange()">
+        <option *ngFor="let lote of lotes" [value]="lote.id_lote">{{lote.cod_lote}}</option>
+      </select>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancelar" (click)="closeEmpaqueModal()">Cancelar</button>
+      <button class="btn-agregar" (click)="registrarEmpaque()">Agregar</button>
+    </div>
+  </div>
+</div>
