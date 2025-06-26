@@ -1,0 +1,27 @@
+.main-container {
+  display: flex;
+}
+
+.content-container {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.reporte-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.reporte-table th, .reporte-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.reporte-table th {
+  background-color: #4CAF50;
+  color: white;
+}

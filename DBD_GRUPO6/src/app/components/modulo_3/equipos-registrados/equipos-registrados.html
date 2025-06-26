@@ -1,0 +1,65 @@
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="container">
+    <h1>Equipos Registrados</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Código de Máquina</th>
+          <th>Nombre del Equipo</th>
+          <th>Tipo de Máquina</th>
+          <th>Estado de Máquina</th>
+          <th>Fecha de Registro</th>
+          <th>Fecha de Salida</th>
+          <th>Detalle</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let maquina of maquinolas">
+          <td>{{ maquina.codigoMaquina }}</td>
+          <td>{{ maquina.equipo }}</td>
+          <td>{{ maquina.tipoMaquina}}</td>
+          <td>{{ maquina.estadoMaquina }}</td>
+          <td>{{ maquina.fechaRegistro }}</td>
+          <td>{{ maquina.fechaSalida || '—' }}</td>
+          <td>{{ maquina.detalle }}</td>
+          <td>
+            <button (click)="openHistorialModal(maquina.codigoMaquina)">Ver</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="showModal" class="custom-modal-overlay">
+    <div class="custom-modal-container">
+      <div class="custom-modal-header">
+        <h2>Historial de Estado</h2>
+      </div>
+      
+      <div class="custom-modal-content">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of historialData">
+              <td>{{item.fecha}}</td>
+              <td>{{item.estado}}</td>
+              <td>{{item.detalle || '—'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="custom-modal-footer">
+        <button class="custom-modal-button" (click)="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

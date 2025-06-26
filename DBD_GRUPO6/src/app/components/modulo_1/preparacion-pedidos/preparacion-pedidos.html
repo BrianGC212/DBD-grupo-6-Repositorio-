@@ -1,0 +1,25 @@
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  
+  <div class="content-container">
+    <div class="pedidos-container">
+      <h1>PREPARACIÓN DE PEDIDOS</h1>
+      
+      <div class="opciones-container">
+        <div class="opcion" (click)="irA('/pickings')">
+          <div class="texto-opcion">
+            <h2>LISTAS DE PICKING</h2>
+          </div>
+        <img src="assets/images/lista.png" alt="Listas de Picking">
+        </div>
+        
+        <div class="opcion" routerLink="/reportes">
+          <div class="texto-opcion">
+            <h2>GENERACIÓN DE REPORTES</h2>
+          </div>
+        <img src="assets/images/archive.png" alt="Archivo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
