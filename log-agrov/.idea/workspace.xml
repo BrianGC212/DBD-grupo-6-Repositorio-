@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fed489cb-32fd-4d46-a9b9-9b4a792c605d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Dto/PedidosDto/RegistrarEmpaqueDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/Area.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/Empleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/Equipo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/Estado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/Lote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Models/MaquinaSustituta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/ActualizarEquipoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/ActualizarEquipoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/CalendarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/CalendarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/DeleteProgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/DeleteProgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/EquipoVisualizarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/EquipoVisualizarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialEstadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialEstadoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/MantenimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/MantenimientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/ProgEquipoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/ProgEquipoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarEquipoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarEquipoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarMaquinaSController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarMaquinaSController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/VisMantenimientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/VisMantenimientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/VisualizarProgramacionesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/EquiposController/VisualizarProgramacionesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/PedidosController/PedidosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Controller/PedidosController/PedidosController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Dto/EquiposDto/MantenimientoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Dto/EquiposDto/MantenimientoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/EquipoVisualizarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/EquipoVisualizarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/MantenimientoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/MantenimientoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/ProgEquipoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/ProgEquipoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/VisualizarProgramacionesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/VisualizarProgramacionesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/EquiposService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/PedidosService/PreparacionPedidosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logistica_agrovision/log_agrov/Service/PedidosService/PreparacionPedidosService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/ActualizarEquipoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/ActualizarEquipoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/CalendarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/CalendarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/DeleteProgController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/DeleteProgController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/EquipoVisualizarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/EquipoVisualizarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialEstadoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/HistorialEstadoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/MantenimientoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/MantenimientoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/ProgEquipoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/ProgEquipoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarEquipoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarEquipoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarMaquinaSController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/RegistrarMaquinaSController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/VisMantenimientoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/VisMantenimientoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/VisualizarProgramacionesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/VisualizarProgramacionesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/EquiposController/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/InventarioController/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/PedidosController/PedidosController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/PedidosController/PedidosController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/PedidosController/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistrarLoteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistrarLoteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistroControlCalidadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistroControlCalidadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistroRecepcionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/RegistroRecepcionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/VisualizarLotesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/VisualizarLotesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/VisualizarRecepcionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/RecepcionController/VisualizarRecepcionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/TransporteController/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Controller/TrazabilidadController/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/ActualizarEquipoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/ActualizarEquipoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/CalendarioDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/CalendarioDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/DeleteProgDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/DeleteProgDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/EquipoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/EquipoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/HistorialDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/HistorialDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/HistorialEstadoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/HistorialEstadoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/LoginDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/LoginDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/MantenimientoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/MantenimientoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/ProgEquipoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/ProgEquipoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/RegistrarEquipoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/RegistrarEquipoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/RegistrarMaquinaSDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/RegistrarMaquinaSDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/VisMantenimientoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/VisMantenimientoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/VisualizarProgramacionesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/VisualizarProgramacionesDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/EquiposDto/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/InventarioDto/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/PedidosDto/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistrarLoteDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistrarLoteDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistroControlCalidadDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistroControlCalidadDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistroRecepcionDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/RegistroRecepcionDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/VisualizarLotesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/VisualizarLotesDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/VisualizarRecepcionDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/RecepcionDto/VisualizarRecepcionDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/TransporteDto/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Dto/TrazabilidadDto/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/LogAgrovApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/LogAgrovApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Models/Picking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Models/Picking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Models/ProductoPicking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Models/ProductoPicking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/ActualizarEquipoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/ActualizarEquipoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/CalendarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/CalendarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/DeleteProgService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/DeleteProgService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/EquipoVisualizarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/EquipoVisualizarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/HistorialEstadoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/HistorialEstadoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/HistorialService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/HistorialService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/MantenimientoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/MantenimientoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/ProgEquipoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/ProgEquipoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/RegistrarEquipoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/RegistrarEquipoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/RegistrarMaquinaSService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/RegistrarMaquinaSService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/VisMantenimientoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/VisMantenimientoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/VisualizarProgramacionesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/VisualizarProgramacionesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/EquiposService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/InventarioService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/PedidosService/PreparacionPedidosService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/PedidosService/PreparacionPedidosService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/PedidosService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistrarLoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistrarLoteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistroControlCalidadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistroControlCalidadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistroRecepcionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/RegistroRecepcionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/VisualizarLotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/VisualizarLotesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/VisualizarRecepcionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/RecepcionService/VisualizarRecepcionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/TransporteService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logistica_agrovision/log_agrov/Service/TrazabilidadService/a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/logistica_agrovision/log_agrov/LogAgrovApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/logistica_agrovision/log_agrov/LogAgrovApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2yfpqN3Y1RzUJmqNht0DzzgPdUz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LogAgrovApplication.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yazid/OneDrive/Escritorio/Yazid/Intellij/Projects/DBD-grupo-6-Repositorio-/logistica_agrovision - copia/log-agrov&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="LogAgrovApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="log-agrov" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="logistica_agrovision.log_agrov.LogAgrovApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fed489cb-32fd-4d46-a9b9-9b4a792c605d" name="Changes" comment="" />
+      <created>1750235672048</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750235672048</updated>
+      <workItem from="1750235673129" duration="4317000" />
+      <workItem from="1750273324181" duration="29909000" />
+      <workItem from="1750692670098" duration="29545000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
