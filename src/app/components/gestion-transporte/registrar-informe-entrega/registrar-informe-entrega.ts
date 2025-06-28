@@ -8,7 +8,7 @@ import { InformeEntregaService } from '../../../services/informe-entrega-service
 
 @Component({
   selector: 'app-registrar-informe-entrega',
-  imports: [CommonModule, ReactiveFormsModule, Sidebar, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule , RouterModule],
   templateUrl: './registrar-informe-entrega.html',
   styleUrl: './registrar-informe-entrega.css'
 })

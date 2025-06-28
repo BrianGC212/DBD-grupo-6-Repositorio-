@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-visualizar-informe-entrega',
-  imports: [CommonModule,RouterModule,Sidebar,FormsModule],
+  imports: [CommonModule,RouterModule,FormsModule],
   templateUrl: './visualizar-informe-entrega.html',
   styleUrl: './visualizar-informe-entrega.css'
 })

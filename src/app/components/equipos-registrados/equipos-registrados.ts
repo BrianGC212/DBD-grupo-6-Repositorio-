@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-equipos-registrados',
-  imports: [Sidebar,CommonModule],
+  imports: [CommonModule],
   templateUrl: './equipos-registrados.html',
   styleUrl: './equipos-registrados.css'
 })

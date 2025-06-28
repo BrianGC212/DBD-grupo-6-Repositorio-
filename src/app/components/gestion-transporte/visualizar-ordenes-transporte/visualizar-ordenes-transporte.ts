@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-visualizar-ordenes-transporte',
   standalone: true,
-  imports: [Sidebar,RouterModule,CommonModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './visualizar-ordenes-transporte.html',
   styleUrl: './visualizar-ordenes-transporte.css'
 })

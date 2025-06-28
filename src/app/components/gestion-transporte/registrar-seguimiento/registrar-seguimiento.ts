@@ -9,7 +9,7 @@ import { SeguimientoInput } from '../../models/models';
 @Component({
   selector: 'app-registrar-seguimiento',
   standalone: true,
-  imports: [CommonModule, Sidebar, RouterModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './registrar-seguimiento.html',
   styleUrl: './registrar-seguimiento.css'
 })

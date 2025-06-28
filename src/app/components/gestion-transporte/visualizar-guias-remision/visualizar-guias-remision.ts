@@ -7,7 +7,7 @@ import { GuiaDetalle, GuiaRemision } from '../../models/models';
 
 @Component({
   selector: 'app-visualizar-guias-remision',
-  imports: [CommonModule,Sidebar,RouterModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './visualizar-guias-remision.html',
   styleUrl: './visualizar-guias-remision.css'
 })

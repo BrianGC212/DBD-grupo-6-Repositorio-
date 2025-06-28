@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { Sidebar } from './components/sidebar/sidebar';
+import { MainLayout } from './components/layout/main-layout';
+import { DashboardRecepcion } from './components/recepcion/dashboard-recepcion/dashboard-recepcion';
+import { VisualizarLotes } from './components/recepcion/visualizar-lotes/visualizar-lotes';
+import { ControlCalidad } from './components/recepcion/control-calidad/control-calidad';
+import { GeneracionReportes } from './components/recepcion/generacion-reportes/generacion-reportes';
 import { GestionEquipos } from './components/gestion-equipos/gestion-equipos';
 import { EquiposRegistrados } from './components/equipos-registrados/equipos-registrados';
 import { PlanificacionEquipos } from './components/planificacion-equipos/planificacion-equipos';
-import { VisualizarLotes } from './components/recepcion/visualizar-lotes/visualizar-lotes';
-import { DashboardRecepcion } from './components/recepcion/dashboard-recepcion/dashboard-recepcion';
-import { ControlCalidad } from './components/recepcion/control-calidad/control-calidad';
-import { GeneracionReportes } from './components/recepcion/generacion-reportes/generacion-reportes';
 import { VisualizarOrdenesTransporte } from './components/gestion-transporte/visualizar-ordenes-transporte/visualizar-ordenes-transporte';
 import { InicioGestionTransporte } from './components/gestion-transporte/inicio-gestion-transporte/inicio-gestion-transporte';
 import { VisualizarGuiasRemision } from './components/gestion-transporte/visualizar-guias-remision/visualizar-guias-remision';
@@ -19,24 +19,29 @@ import { RegistrarInformeEntrega } from './components/gestion-transporte/registr
 import { RegistrarOrdenTransporte } from './components/gestion-transporte/registrar-orden-transporte/registrar-orden-transporte';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'sidebar', pathMatch: 'full' },
-    { path: 'sidebar', component: Sidebar},
-    { path: 'dashboard-recepcion', component: DashboardRecepcion },
-    {path: 'gestion-equipos', component: GestionEquipos},
-    {path: 'equipos-registrados', component:EquiposRegistrados},
-    {path: 'planificacion-equipos', component:PlanificacionEquipos},
-    { path: 'visualizar-lotes', component: VisualizarLotes },
-    { path: 'control-calidad', component: ControlCalidad },
-    { path: 'reportes-recepcion', component: GeneracionReportes },
-    {path: 'gestion-transporte', component:InicioGestionTransporte},
-    {path: 'gestion-transporte/ordenes', component:VisualizarOrdenesTransporte},
-    { path: 'gestion-transporte/guias', component: VisualizarGuiasRemision },
-    { path: 'gestion-transporte/informes', component: VisualizarInformeEntrega },
-    { path: 'gestion-transporte/incidentes', component: VisualizarReporteIncidente },
-    {path: 'gestion-transporte/registrar-guia', component: RegistrarGuiaRemision},
-    {path: 'gestion-transporte/seguimiento', component: Seguimiento},
-    {path: 'gestion-transporte/registrar-seguimiento',component: RegistrarSeguimiento},
-    { path: 'gestion-transporte/registrar-informe-entrega', component: RegistrarInformeEntrega },
-    { path: 'gestion-transporte/registrar-orden', component: RegistrarOrdenTransporte },
-    { path: '**', redirectTo: 'sidebar' }
+  {
+    path: '',
+    component: MainLayout,
+    children: [
+      { path: '', redirectTo: 'dashboard-recepcion', pathMatch: 'full' },
+      { path: 'dashboard-recepcion', component: DashboardRecepcion },
+      { path: 'visualizar-lotes', component: VisualizarLotes },
+      { path: 'control-calidad', component: ControlCalidad },
+      { path: 'reportes-recepcion', component: GeneracionReportes },
+      { path: 'gestion-equipos', component: GestionEquipos },
+      { path: 'equipos-registrados', component: EquiposRegistrados },
+      { path: 'planificacion-equipos', component: PlanificacionEquipos },
+      { path: 'gestion-transporte', component: InicioGestionTransporte },
+      { path: 'gestion-transporte/ordenes', component: VisualizarOrdenesTransporte },
+      { path: 'gestion-transporte/guias', component: VisualizarGuiasRemision },
+      { path: 'gestion-transporte/informes', component: VisualizarInformeEntrega },
+      { path: 'gestion-transporte/incidentes', component: VisualizarReporteIncidente },
+      { path: 'gestion-transporte/registrar-guia', component: RegistrarGuiaRemision },
+      { path: 'gestion-transporte/seguimiento', component: Seguimiento },
+      { path: 'gestion-transporte/registrar-seguimiento', component: RegistrarSeguimiento },
+      { path: 'gestion-transporte/registrar-informe-entrega', component: RegistrarInformeEntrega },
+      { path: 'gestion-transporte/registrar-orden', component: RegistrarOrdenTransporte }
+    ]
+  },
+  { path: '**', redirectTo: '' }
 ];

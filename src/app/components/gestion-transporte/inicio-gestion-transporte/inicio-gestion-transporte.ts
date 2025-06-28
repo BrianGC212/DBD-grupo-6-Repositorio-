@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-inicio-gestion-transporte',
   standalone: true,
-  imports: [Sidebar,RouterModule,CommonModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './inicio-gestion-transporte.html',
   styleUrls: ['./inicio-gestion-transporte.css']
 })

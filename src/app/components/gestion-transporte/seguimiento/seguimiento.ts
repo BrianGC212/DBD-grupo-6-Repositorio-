@@ -7,7 +7,7 @@ import { SeguimientoI } from '../../models/models';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-seguimiento',
-  imports: [CommonModule,Sidebar,RouterModule,FormsModule],
+  imports: [CommonModule,RouterModule,FormsModule],
   templateUrl: './seguimiento.html',
   styleUrl: './seguimiento.css'
 })

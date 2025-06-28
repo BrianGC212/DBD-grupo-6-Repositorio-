@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-registrar-orden-transporte',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, Sidebar, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './registrar-orden-transporte.html',
   styleUrl: './registrar-orden-transporte.css'
 })

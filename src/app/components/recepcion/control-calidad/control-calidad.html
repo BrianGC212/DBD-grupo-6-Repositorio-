@@ -1,20 +1,15 @@
 <div class="main-layout">
-  <app-sidebar></app-sidebar>
-
   <div class="control-container">
-    <h1 class="titulo">Control de Calidad - Recepciones</h1>
+    <h2 class="titulo">Control Calidad</h2>
 
-    <!-- Mensaje de carga -->
-    <div *ngIf="cargando" class="mensaje-cargando">
+    <div *ngIf="cargando" class="mensaje-vacio">
       Cargando recepciones...
     </div>
 
-    <!-- Mensaje si no hay datos -->
     <div *ngIf="!cargando && recepciones.length === 0" class="mensaje-vacio">
-      No hay recepciones registradas.
+      No hay recepciones aprobadas disponibles.
     </div>
 
-    <!-- Tabla si hay datos -->
     <div *ngIf="!cargando && recepciones.length > 0" class="tabla-contenedor">
       <table class="tabla">
         <thead>
@@ -35,12 +30,7 @@
             <td>{{ r.cantidad }}</td>
             <td>{{ r.unidad }}</td>
             <td>
-              <span [ngClass]="{
-                'estado-aprobado': r.estado_recepcion === 'Aprobado',
-                'estado-observado': r.estado_recepcion === 'Observado'
-              }">
-                {{ r.estado_recepcion }}
-              </span>
+              <span class="estado-aprobado">{{ r.estado_recepcion }}</span>
             </td>
           </tr>
         </tbody>

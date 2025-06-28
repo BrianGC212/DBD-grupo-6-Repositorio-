@@ -9,7 +9,7 @@ import { GuiaRemisionInput } from '../../models/models';
 @Component({
   selector: 'app-registrar-guia-remision',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, Sidebar, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './registrar-guia-remision.html',
   styleUrls: ['./registrar-guia-remision.css']
 })

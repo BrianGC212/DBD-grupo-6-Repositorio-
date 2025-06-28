@@ -7,7 +7,7 @@ import { ReporteIncidenteService } from '../../../services/reporte-incidente-ser
 
 @Component({
   selector: 'app-visualizar-reporte-incidente',
-  imports: [CommonModule,Sidebar, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './visualizar-reporte-incidente.html',
   styleUrl: './visualizar-reporte-incidente.css'
 })

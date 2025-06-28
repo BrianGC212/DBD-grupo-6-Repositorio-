@@ -3,7 +3,7 @@ import { Sidebar } from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-planificacion-equipos',
-  imports: [Sidebar],
+  imports: [],
   templateUrl: './planificacion-equipos.html',
   styleUrl: './planificacion-equipos.css'
 })
