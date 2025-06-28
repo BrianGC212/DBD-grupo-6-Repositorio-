@@ -6,6 +6,7 @@ import logistica_agrovision.log_agrov.Service.RecepcionService.ReporteProductoOb
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/reporte-producto-observado")
 public class ReporteProductoObservadoController {
