@@ -1,0 +1,109 @@
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="container">
+    <h1>Reportes de Trazabilidad</h1>
+
+    <!-- Estados de carga y datos -->
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p>Cargando reportes...</p>
+    </div>
+
+    <div *ngIf="!isLoading && reportes.length === 0" class="no-data">
+      <p>No se encontraron reportes</p>
+      <button class="reintentar-button" (click)="cargarReportes()">Reintentar</button>
+    </div>
+
+    <div *ngIf="!isLoading && reportes.length > 0">
+      <!-- Barra de búsqueda -->
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filtrarReportes()" 
+               placeholder="Buscar por código, proceso o estado..." class="search-input">
+        <button class="search-button" (click)="filtrarReportes()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>
+
+      <!-- Tabla principal de reportes -->
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Proceso</th>
+            <th>Fecha Actualizada</th>
+            <th>Hora Actualizada</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reporte of reportes">
+            <td>
+              <button class="link-button" (click)="verDetalle(reporte)">
+                {{ reporte.codigo }}
+              </button>
+            </td>
+            <td>{{ reporte.proceso }}</td>
+            <td>{{ reporte.fechaActualizada | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ reporte.horaActualizada }}</td>
+            <td>{{ reporte.estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Detalle del Reporte -->
+<div class="custom-modal-overlay" *ngIf="mostrarDetalle">
+  <div class="custom-modal-container">
+    <div class="custom-modal-header">
+      <h2>Detalle del Reporte</h2>
+    </div>
+    <div class="custom-modal-content">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th>Código:</th>
+            <td>{{ detalleSeleccionado?.codigo }}</td>
+          </tr>
+          <tr>
+            <th>Proceso:</th>
+            <td>{{ detalleSeleccionado?.proceso }}</td>
+          </tr>
+          <tr>
+            <th>Fecha:</th>
+            <td>{{ detalleSeleccionado?.fechaActualizada | date: 'dd/MM/yyyy' }}</td>
+          </tr>
+          <tr>
+            <th>Hora:</th>
+            <td>{{ detalleSeleccionado?.horaActualizada }}</td>
+          </tr>
+          <tr>
+            <th>Estado:</th>
+            <td>{{ detalleSeleccionado?.estado }}</td>
+          </tr>
+          <tr>
+            <th>Firmas:</th>
+            <td>{{ detalleSeleccionado?.firmas || 'N/A' }}</td>
+          </tr>
+          <tr>
+            <th>Anexos:</th>
+            <td>
+              {{ detalleSeleccionado?.anexos || 'N/A' }}
+              <button 
+                *ngIf="detalleSeleccionado?.anexos" 
+                class="download-button" 
+                (click)="descargarAnexoSimulado(detalleSeleccionado.anexos)">
+                Descargar anexo
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="custom-modal-footer">
+      <button class="custom-modal-button" (click)="cerrarDetalle()">Cerrar</button>
+    </div>
+  </div>
+</div>
