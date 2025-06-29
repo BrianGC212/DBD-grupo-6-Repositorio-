@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Historial, Maquina } from '../components/models/models';
+import { Historial, Maquina } from '../components/modulo_3/models/models';
 
 @Injectable({
   providedIn: 'root'
