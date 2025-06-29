@@ -1,0 +1,102 @@
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="container">
+    <h1>Procesos de Trazabilidad</h1>
+
+    <!-- Estados de carga -->
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p>Cargando procesos...</p>
+    </div>
+
+    <div *ngIf="!isLoading && procesos.length === 0" class="no-data">
+      <p>No se encontraron procesos</p>
+      <button class="reintentar-button" (click)="cargarProcesos()">Reintentar</button>
+    </div>
+
+    <!-- Contenido principal cuando hay datos -->
+    <div *ngIf="!isLoading && procesos.length > 0">
+      <!-- Barra de búsqueda -->
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filtrarProcesos()" 
+               placeholder="Buscar por código, tipo o estado..." class="search-input">
+        <button class="search-button" (click)="filtrarProcesos()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>   
+      
+      <!-- Tabla principal -->
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Tipo de Proceso</th>
+            <th>Fecha Actualizada</th>
+            <th>Hora Actualizada</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let proceso of procesos">
+            <td>
+              <button class="link-button" (click)="verDetalleProceso(proceso.codigo)">
+                {{ proceso.codigo }}
+              </button>
+            </td>
+            <td>{{ proceso.proceso }}</td>
+            <td>{{ proceso.fechaActualizada | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ proceso.horaActualizada }}</td>
+            <td>{{ proceso.estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Detalles -->
+<div class="custom-modal-overlay" *ngIf="mostrarDetalle">
+  <div class="custom-modal-container">
+    <div class="custom-modal-header">
+      <h2>Detalle del Proceso</h2>
+    </div>
+    <div class="custom-modal-content">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th>Código del Proceso:</th>
+            <td>{{ detalleProceso?.codigo }}</td>
+          </tr>
+          <tr>
+            <th>Supervisor:</th>
+            <td>{{ detalleProceso?.supervisor }}</td>
+          </tr>
+          <tr>
+            <th>Código del Empleado:</th>
+            <td>{{ detalleProceso?.codigoEmpleado }}</td>
+          </tr>
+          <tr>
+            <th>Tipo de Empleado:</th>
+            <td>{{ detalleProceso?.tipoEmpleado }}</td>
+          </tr>
+          <tr>
+            <th>Fecha:</th>
+            <td>{{ detalleProceso?.fecha | date: 'dd/MM/yyyy' }}</td>
+          </tr>
+          <tr>
+            <th>Hora:</th>
+            <td>{{ detalleProceso?.hora }}</td>
+          </tr>
+          <tr>
+            <th>Observaciones:</th>
+            <td>{{ detalleProceso?.observaciones || '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="custom-modal-footer">
+      <button class="custom-modal-button" (click)="cerrarDetalle()">Cerrar</button>
+    </div>
+  </div>
+</div>
