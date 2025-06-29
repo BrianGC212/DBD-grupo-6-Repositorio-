@@ -1,0 +1,69 @@
+<app-sidebar></app-sidebar>
+<div class="asignacion-container">
+  <h1>PROGRAMAR ASIGNACIÓN DE EQUIPOS</h1>
+
+  <div *ngIf="mensajeExito" class="mensaje-exito">
+    {{ mensajeExito }}
+  </div>
+
+  <div *ngIf="mensajeError" class="mensaje-error">
+    {{ mensajeError }}
+  </div>
+  <div class="formulario-asignacion">
+    <div class="form-row">
+      <label for="equipo">Seleccionar Equipo:</label>
+      <select id="equipo" class="form-control" [(ngModel)]="dto.idEquipo" name="idEquipo">
+        <option [value]="0" disabled selected>Seleccione un equipo</option>
+        <option *ngFor="let equipo of listadoEquipos" [value]="equipo.idEquipo">
+          {{equipo.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="area">Área de Asignación:</label>
+      <select id="area" class="form-control" [(ngModel)]="dto.idArea" name="idArea">
+        <option [value]="''" disabled selected>Seleccione un área</option>
+        <option *ngFor="let area of listadoAreas" [value]="area.id_area">
+          {{area.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="responsable">Responsable:</label>
+      <select id="responsable" class="form-control" [(ngModel)]="dto.idEmpleadoSolicita" name="idEmpleadoSolicita">
+        <option [value]="0" disabled selected>Seleccione un responsable</option>
+        <option *ngFor="let responsable of listadoEmpleados" [value]="responsable.id_empleado">
+          {{responsable.nombre_apellido}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="fecha-inicio">Fecha y Hora de Inicio:</label>
+      <input id="fecha-inicio" type="datetime-local" class="form-control" [(ngModel)]="dto.fechaInicio" name="fechaInicio">
+    </div>
+
+    <div class="form-row">
+      <label for="fecha-fin">Fecha y Hora de Finalización:</label>
+      <input id="fecha-fin" type="datetime-local" class="form-control" [(ngModel)]="dto.fechaFin" name="fechaFin">
+    </div>
+
+    <div class="form-row">
+      <label for="descripcion">Descripción de la Tarea:</label>
+      <textarea id="descripcion" class="form-control" placeholder="Insertar descripción" [(ngModel)]="dto.descripcionTarea" name="descripcionTarea"></textarea>
+    </div>
+  </div>
+
+  <div class="programaciones-section">
+    <h3 routerLink="/programacion-mantenimiento">PROGRAMACIONES</h3>
+    <div class="botones-accion">
+      <button class="btn-programar" (click)="registrarAsignacion()" [disabled]="cargandoAsignacion">
+        <span *ngIf="!cargandoAsignacion">Planificar Asignación</span>
+        <span *ngIf="cargandoAsignacion">Cargando...</span> </button>
+      <button class="btn-cancelar">Cancelar</button>
+
+      </div>
+  </div>
+</div>
