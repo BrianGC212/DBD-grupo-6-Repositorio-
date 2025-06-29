@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-visualizar-reporte-trazabilidad',
   standalone: true,
-  imports: [Sidebar, CommonModule, RouterModule, HttpClientModule, FormsModule],
+  imports: [ CommonModule, RouterModule, HttpClientModule, FormsModule],
   templateUrl: './visualizar-reporte-trazabilidad.html',
   styleUrls: ['./visualizar-reporte-trazabilidad.css']
 })

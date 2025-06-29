@@ -10,7 +10,7 @@ import autoTable from 'jspdf-autotable';
 @Component({
   selector: 'app-visualizar-incidencias',
   standalone: true,
-  imports: [Sidebar, CommonModule, RouterModule, HttpClientModule, FormsModule],
+  imports: [ CommonModule, RouterModule, HttpClientModule, FormsModule],
   templateUrl: './visualizar-incidencias.html',
   styleUrls: ['./visualizar-incidencias.css']
 })

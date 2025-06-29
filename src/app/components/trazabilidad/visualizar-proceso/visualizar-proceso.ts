@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-visualizar-proceso',
   standalone: true,
-  imports: [Sidebar, CommonModule, RouterModule, HttpClientModule, FormsModule],
+  imports: [ CommonModule, RouterModule, HttpClientModule, FormsModule],
   templateUrl: './visualizar-proceso.html',
   styleUrls: ['./visualizar-proceso.css']
 })

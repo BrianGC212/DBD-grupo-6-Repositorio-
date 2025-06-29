@@ -45,11 +45,11 @@ export const routes: Routes = [
       { path: 'gestion-transporte/seguimiento', component: Seguimiento },
       { path: 'gestion-transporte/registrar-seguimiento', component: RegistrarSeguimiento },
       { path: 'gestion-transporte/registrar-informe-entrega', component: RegistrarInformeEntrega },
-      { path: 'gestion-transporte/registrar-orden', component: RegistrarOrdenTransporte }
+      { path: 'gestion-transporte/registrar-orden', component: RegistrarOrdenTransporte },
       { path: 'trazabilidad', component: InicioTrazabilidad },
-    { path: 'trazabilidad/procesos', component: VisualizarProceso },
-    { path: 'trazabilidad/reporte', component: VisualizarReporteTrazabilidad },
-    { path: 'trazabilidad/incidencias', component: VisualizarIncidencias},
+      { path: 'trazabilidad/procesos', component: VisualizarProceso },
+      { path: 'trazabilidad/reporte', component: VisualizarReporteTrazabilidad },
+      { path: 'trazabilidad/incidencias', component: VisualizarIncidencias},
     ]
   },
   { path: '**', redirectTo: '' }

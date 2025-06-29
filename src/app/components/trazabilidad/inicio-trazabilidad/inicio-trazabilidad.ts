@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-inicio-trazabilidad',
   standalone: true,
-  imports: [Sidebar,RouterModule,CommonModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './inicio-trazabilidad.html',
   styleUrls: ['./inicio-trazabilidad.css']
 })
