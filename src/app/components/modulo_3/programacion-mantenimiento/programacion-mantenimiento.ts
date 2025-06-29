@@ -8,7 +8,7 @@ import { ProgMantService } from '../../../services/progMantenimientoService';
 
 @Component({
   selector: 'app-programacion-mantenimiento',
-  imports: [Sidebar,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './programacion-mantenimiento.html',
   styleUrl: './programacion-mantenimiento.css'
 })

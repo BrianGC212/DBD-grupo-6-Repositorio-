@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http'; // Importa esto si tu c
 
 @Component({
   selector: 'app-planificacion-equipos',
-  imports: [Sidebar, FormsModule, CommonModule, HttpClientModule], // Agrega HttpClientModule si es standalone
+  imports: [ FormsModule, CommonModule, HttpClientModule], // Agrega HttpClientModule si es standalone
   templateUrl: './planificacion-equipos.html',
   styleUrl: './planificacion-equipos.css',
   providers: [DatePipe]

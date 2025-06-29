@@ -5,7 +5,7 @@ import { HistorialEquiposService } from '../../../services/historial-equipos';
 
 @Component({
   selector: 'app-historial-equipos',
-  imports: [Sidebar,CommonModule],
+  imports: [CommonModule],
   templateUrl: './historial-equipos.html',
   styleUrl: './historial-equipos.css'
 })

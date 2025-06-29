@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-equipos-registrados',
-  imports: [Sidebar, CommonModule],
+  imports: [ CommonModule],
   templateUrl: './equipos-registrados.html',
   styleUrl: './equipos-registrados.css'
 })

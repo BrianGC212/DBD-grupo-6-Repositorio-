@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-visualizar-programaciones',
-  imports: [Sidebar,CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './visualizar-programaciones.html',
   styleUrl: './visualizar-programaciones.css'
 })

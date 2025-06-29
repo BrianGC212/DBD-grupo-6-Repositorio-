@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-gestion-equipos',
   imports: [
-    Sidebar, RouterModule
+     RouterModule
   ],
   templateUrl: './gestion-equipos.html',
   styleUrl: './gestion-equipos.css'
