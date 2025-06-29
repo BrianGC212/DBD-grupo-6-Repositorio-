@@ -17,6 +17,11 @@ import { Seguimiento } from './components/gestion-transporte/seguimiento/seguimi
 import { RegistrarSeguimiento } from './components/gestion-transporte/registrar-seguimiento/registrar-seguimiento';
 import { RegistrarInformeEntrega } from './components/gestion-transporte/registrar-informe-entrega/registrar-informe-entrega';
 import { RegistrarOrdenTransporte } from './components/gestion-transporte/registrar-orden-transporte/registrar-orden-transporte';
+import { InicioTrazabilidad } from './components/trazabilidad/inicio-trazabilidad/inicio-trazabilidad';
+import {VisualizarProceso} from './components/trazabilidad/visualizar-proceso/visualizar-proceso';
+import {VisualizarReporteTrazabilidad} from './components/trazabilidad/visualizar-reporte-trazabilidad/visualizar-reporte-trazabilidad';
+import {VisualizarIncidencias } from './components/trazabilidad/visualizar-incidencias/visualizar-incidencias';
+
 
 export const routes: Routes = [
   {
@@ -41,6 +46,10 @@ export const routes: Routes = [
       { path: 'gestion-transporte/registrar-seguimiento', component: RegistrarSeguimiento },
       { path: 'gestion-transporte/registrar-informe-entrega', component: RegistrarInformeEntrega },
       { path: 'gestion-transporte/registrar-orden', component: RegistrarOrdenTransporte }
+      { path: 'trazabilidad', component: InicioTrazabilidad },
+    { path: 'trazabilidad/procesos', component: VisualizarProceso },
+    { path: 'trazabilidad/reporte', component: VisualizarReporteTrazabilidad },
+    { path: 'trazabilidad/incidencias', component: VisualizarIncidencias},
     ]
   },
   { path: '**', redirectTo: '' }
