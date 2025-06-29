@@ -4,9 +4,6 @@ import { DashboardRecepcion } from './components/recepcion/dashboard-recepcion/d
 import { VisualizarLotes } from './components/recepcion/visualizar-lotes/visualizar-lotes';
 import { ControlCalidad } from './components/recepcion/control-calidad/control-calidad';
 import { GeneracionReportes } from './components/recepcion/generacion-reportes/generacion-reportes';
-import { GestionEquipos } from './components/gestion-equipos/gestion-equipos';
-import { EquiposRegistrados } from './components/equipos-registrados/equipos-registrados';
-import { PlanificacionEquipos } from './components/planificacion-equipos/planificacion-equipos';
 import { VisualizarOrdenesTransporte } from './components/gestion-transporte/visualizar-ordenes-transporte/visualizar-ordenes-transporte';
 import { InicioGestionTransporte } from './components/gestion-transporte/inicio-gestion-transporte/inicio-gestion-transporte';
 import { VisualizarGuiasRemision } from './components/gestion-transporte/visualizar-guias-remision/visualizar-guias-remision';
@@ -21,6 +18,12 @@ import { InicioTrazabilidad } from './components/trazabilidad/inicio-trazabilida
 import {VisualizarProceso} from './components/trazabilidad/visualizar-proceso/visualizar-proceso';
 import {VisualizarReporteTrazabilidad} from './components/trazabilidad/visualizar-reporte-trazabilidad/visualizar-reporte-trazabilidad';
 import {VisualizarIncidencias } from './components/trazabilidad/visualizar-incidencias/visualizar-incidencias';
+import { GestionEquipos } from './components/modulo_3/gestion-equipos/gestion-equipos';
+import { EquiposRegistrados } from './components/modulo_3/equipos-registrados/equipos-registrados';
+import { PlanificacionEquipos } from './components/modulo_3/planificacion-equipos/planificacion-equipos';
+import { ProgramacionMantenimiento } from './components/modulo_3/programacion-mantenimiento/programacion-mantenimiento';
+import { VisualizarProgramaciones } from './components/modulo_3/visualizar-programaciones/visualizar-programaciones';
+import { HistorialEquipos } from './components/modulo_3/historial-equipos/historial-equipos';
 
 
 export const routes: Routes = [
@@ -33,9 +36,12 @@ export const routes: Routes = [
       { path: 'visualizar-lotes', component: VisualizarLotes },
       { path: 'control-calidad', component: ControlCalidad },
       { path: 'reportes-recepcion', component: GeneracionReportes },
-      { path: 'gestion-equipos', component: GestionEquipos },
-      { path: 'equipos-registrados', component: EquiposRegistrados },
-      { path: 'planificacion-equipos', component: PlanificacionEquipos },
+      { path: 'gestion-equipos', component: GestionEquipos},
+      { path: 'equipos-registrados', component:EquiposRegistrados},
+      { path: 'planificacion-equipos', component:PlanificacionEquipos},
+      { path:'programacion-mantenimiento',component:ProgramacionMantenimiento},
+      { path: 'visualizar-programaciones', component:VisualizarProgramaciones},
+      { path:"historial-equipos",component:HistorialEquipos},
       { path: 'gestion-transporte', component: InicioGestionTransporte },
       { path: 'gestion-transporte/ordenes', component: VisualizarOrdenesTransporte },
       { path: 'gestion-transporte/guias', component: VisualizarGuiasRemision },
