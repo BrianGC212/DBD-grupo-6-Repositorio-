@@ -1,0 +1,38 @@
+<!-- Contenedor principal del layout, flex para organizar el contenido y el sidebar -->
+<div class="layout-container">
+  <!-- app-sidebar: Componente de barra lateral (asumiendo que ya existe o será un componente Angular) -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Contenido principal de la página de gestión de trazabilidad -->
+  <div class="main-content">
+    <!-- Título de la sección, con estilos definidos en el CSS -->
+    <h1 class="gestion-equipos-title">TRAZABILIDAD</h1>
+
+    <!-- Contenedor para las tarjetas de módulo, usando un layout de grilla responsivo -->
+    <div class="card-container">
+      <!-- Tarjeta para el módulo de Incidencias -->
+      <div class="card">
+        <h3>INCIDENCIAS</h3>
+        <p>Registra, clasifica y gestiona los incidentes ocurridos durante el ciclo de vida de los productos o procesos.</p>
+        <!-- Botón con estilo específico y routerLink para navegación (ajusta la ruta según tu configuración) -->
+        <button class="btn btn-green" routerLink="/trazabilidad/incidencias">Ir a Incidencias</button>
+      </div>
+
+      <!-- Tarjeta para el módulo de Reporte de Trazabilidad -->
+      <div class="card">
+        <h3>REPORTE DE TRAZABILIDAD</h3>
+        <p>Genera informes detallados que permiten rastrear el origen, el proceso y el destino de los elementos.</p>
+        <!-- Botón con estilo específico y routerLink para navegación (ajusta la ruta según tu configuración) -->
+        <button class="btn btn-aqua" routerLink="/trazabilidad/reporte">Ir a Reporte de Trazabilidad</button>
+      </div>
+
+      <!-- Tarjeta para el módulo de Procesos de Trazabilidad -->
+      <div class="card">
+        <h3>PROCESOS DE TRAZABILIDAD</h3>
+        <p>Visualiza y gestiona los flujos de trabajo y las etapas clave dentro del proceso de trazabilidad.</p>
+        <!-- Botón con estilo específico y routerLink para navegación (ajusta la ruta según tu configuración) -->
+        <button class="btn btn-purple" routerLink="/trazabilidad/procesos">Ir a Procesos de Trazabilidad</button>
+      </div>
+    </div>
+  </div>
+</div>
