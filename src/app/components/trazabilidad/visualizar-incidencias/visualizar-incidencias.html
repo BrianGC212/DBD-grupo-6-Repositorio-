@@ -1,0 +1,170 @@
+<div class="main-layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="container">
+    <h1>Incidencias</h1>
+    
+    <!-- Contenedor superior con botón y búsqueda -->
+    <div class="top-actions">
+      <!-- Botón para registrar nueva incidencia -->
+      <button class="registrar-button" (click)="abrirFormularioRegistro()">Registrar Incidencia</button>
+      
+      <!-- Barra de búsqueda -->
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filtrarIncidencias()" 
+               placeholder="Buscar por código, proceso o estado..." class="search-input">
+        <button class="search-button" (click)="filtrarIncidencias()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </div>
+    </div>
+
+    <!-- Estados de carga -->
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p>Cargando incidencias...</p>
+    </div>
+
+    <div *ngIf="!isLoading && incidencias.length === 0" class="no-data">
+      <p>No se encontraron incidencias</p>
+      <button class="reintentar-button" (click)="cargarIncidencias()">Reintentar</button>
+    </div>
+
+    <!-- Tabla principal de incidencias (solo visible cuando hay datos) -->
+    <div *ngIf="!isLoading && incidencias.length > 0">
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Fecha Registrada</th>
+            <th>Hora</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let incidencia of incidencias">
+            <td>
+              <button class="link-button" (click)="verDetalle(incidencia)">
+                {{ incidencia.cod }}
+              </button>
+            </td>
+            <td>{{ incidencia.fechaActualizada | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ incidencia.horaActualizada }}</td>
+            <td>{{ incidencia.estado }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Detalle con campo Proceso visible -->
+<div class="custom-modal-overlay" *ngIf="mostrarDetalle">
+  <div class="custom-modal-container">
+    <div class="custom-modal-header">
+      <h2>Detalle de la Incidencia</h2>
+    </div>
+    <div class="custom-modal-content">
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th>Código:</th>
+            <td>{{ detalleSeleccionado?.cod }}</td>
+          </tr>
+          <tr>
+            <th>Proceso:</th>
+            <td>{{ detalleSeleccionado?.proceso }}</td>
+          </tr>
+          <tr>
+            <th>Fecha Registrada:</th>
+            <td>{{ detalleSeleccionado?.fechaActualizada | date: 'dd/MM/yyyy' }}</td>
+          </tr>
+          <tr>
+            <th>Hora:</th>
+            <td>{{ detalleSeleccionado?.horaActualizada }}</td>
+          </tr>
+          <tr>
+            <th>Estado:</th>
+            <td>{{ detalleSeleccionado?.estado }}</td>
+          </tr>
+          <tr>
+            <th>Observaciones:</th>
+            <td>{{ detalleSeleccionado?.observaciones || '-' }}</td>
+          </tr>
+          <tr>
+            <th>Evidencias:</th>
+            <td>
+              <span>{{ detalleSeleccionado?.evidencias || '-' }}</span>
+              <button *ngIf="detalleSeleccionado?.evidencias" class="download-evidence-button" (click)="descargarEvidencia()">
+                <i class="fas fa-file-download"></i> Descargar
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th>Fecha de Resolución:</th>
+            <td>{{ detalleSeleccionado?.fechaResolucion ? (detalleSeleccionado.fechaResolucion | date: 'dd/MM/yyyy') : '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="custom-modal-footer">
+      <button class="custom-modal-button download-button" (click)="descargarIncidencia()">
+        <i class="fas fa-download"></i> Descargar PDF
+      </button>
+      <button class="custom-modal-button cerrar-button" (click)="cerrarDetalle()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Registro Simplificado -->
+<div class="custom-modal-overlay" *ngIf="mostrarFormularioRegistro">
+  <div class="custom-modal-container">
+    <div class="custom-modal-header">
+      <h2>Registrar Nueva Incidencia</h2>
+      <p class="auto-generate-notice">* Código, Fecha, Hora y IDs se generarán automáticamente</p>
+    </div>
+    <div class="custom-modal-content">
+      <form (ngSubmit)="registrarIncidencia()">
+        <!-- Campos requeridos -->
+        <label>Causa:
+          <input type="text" [(ngModel)]="nuevoRegistro.causa" name="causa" required 
+                 placeholder="Descripción de la causa" class="form-input"/>
+        </label>
+        
+        <label>Tipo de Incidencia:
+          <input type="text" [(ngModel)]="nuevoRegistro.tipoIncidencia" name="tipoIncidencia" required 
+                 placeholder="Tipo de incidencia" class="form-input"/>
+        </label>
+        
+        <!-- Estado opcional con valor por defecto -->
+        <label>Estado:
+          <select [(ngModel)]="nuevoRegistro.estado" name="estado" class="form-input">
+            <option value="Pendiente">Pendiente</option>
+            <option value="En proceso">En proceso</option>
+            <option value="Resuelta">Resuelta</option>
+          </select>
+        </label>
+        
+        <!-- Campos opcionales -->
+        <label>Observaciones:
+          <textarea [(ngModel)]="nuevoRegistro.observaciones" name="observaciones" 
+                    placeholder="Observaciones adicionales" class="form-textarea"></textarea>
+        </label>
+        
+        <label>Evidencias:
+          <input type="text" [(ngModel)]="nuevoRegistro.evidencias" name="evidencias" 
+                 placeholder="Referencia a evidencias" class="form-input"/>
+        </label>
+        
+        <label>Fecha Resolución (opcional):
+          <input type="date" [(ngModel)]="nuevoRegistro.fechaResolucion" name="fechaResolucion" class="form-input"/>
+        </label>
+
+        <div class="custom-modal-footer">
+          <button type="submit" class="custom-modal-button primary">Registrar</button>
+          <button type="button" class="custom-modal-button secondary" (click)="cerrarFormularioRegistro()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
