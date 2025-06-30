@@ -1,0 +1,50 @@
+<div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+    <h1>Seguimiento de Transporte</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <button routerLink="/gestion-transporte/registrar-seguimiento" style="padding: 8px 16px; background-color: #2ecc71; color: white; border: none; border-radius: 4px;">
+    Registrar Seguimiento
+    </button>
+    <input
+    type="text"
+    [(ngModel)]="codigoBusqueda"
+    placeholder="Buscar orden de transporte..."
+    style="padding: 6px; width: 250px; border-radius: 4px; border: 1px solid #ccc;"
+    />
+    <button (click)="buscarPorCodigo()" style="padding: 6px 12px; margin-left: 8px;">Buscar</button>
+    <button (click)="cargarSeguimiento()" style="padding: 6px 12px; margin-left: 4px; background-color: #777;">Limpiar</button>
+    </div>
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Orden</th>
+            <th>Empleado</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of seguimientos">
+            <td>{{ item.cod_orden_transporte }}</td>
+            <td>{{ item.cod_empleado }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.fecha_registro }}</td>
+            <td>{{ item.hora_registro }}</td>
+            <td>
+            <span [ngClass]="{
+                'estado-finalizado': item.estado === 'Entregado',
+                'estado-transito': item.estado === 'Transito',
+                'estado-retrasado': item.estado === 'Retrasado'
+            }">
+                {{ item.estado }}
+            </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+    <h1>Registrar Guía de Remisión</h1>
+
+    <form [formGroup]="guiaForm" (ngSubmit)="registrarGuia()">
+        <label>Fecha de Traslado:</label>
+        <input type="date" formControlName="fecha_de_traslado" />
+
+        <label>Placa del Vehículo:</label>
+        <input type="text" formControlName="placa_vehiculo" />
+
+        <label>Código de Empleado:</label>
+        <input type="text" formControlName="cod_empleado" />
+
+        <label>Código de Pedido:</label>
+        <input type="text" formControlName="cod_pedido" />
+
+        <label>Código de Transportista:</label>
+        <input type="text" formControlName="cod_transportista" />
+
+        <button type="submit">Registrar Guía</button>
+    </form>
+    <div class="volver-container">
+        <button routerLink="/gestion-transporte/guias" class="btn btn-secondary">← Volver</button>
+    </div>
+
+    <p class="mensaje">{{ mensaje }}</p>
+    </div>
+</div>

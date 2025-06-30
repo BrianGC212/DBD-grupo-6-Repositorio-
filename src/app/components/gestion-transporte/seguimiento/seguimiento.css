@@ -1,0 +1,43 @@
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+app-sidebar {
+    flex: 0 0 220px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.estado-finalizado {
+    color: green;
+    font-weight: bold;
+}
+
+.estado-transito {
+    color: orange;
+    font-weight: bold;
+}
+
+.estado-retrasado {
+    color: red;
+    font-weight: bold;
+}

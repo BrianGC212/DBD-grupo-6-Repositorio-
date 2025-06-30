@@ -1,0 +1,80 @@
+<div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+    <h1>GUÍAS DE REMISIÓN</h1>
+
+    <div class="acciones-superiores">
+        <button routerLink="/gestion-transporte/registrar-guia" class="btn btn-success">
+        Registrar Nueva Guía
+        </button>
+    </div>
+    
+
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Código Guía</th>
+            <th>Código Orden</th>
+            <th>Empleado</th>
+            <th>Vehículo</th>
+            <th>Tipo Vehículo</th>
+            <th>Fecha de Traslado</th>
+            <th>Entregado</th>
+            <th>Ver Detalle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let guia of guias">
+            <td>{{ guia.cod_guia_remision }}</td>
+            <td>{{ guia.cod_orden_transporte }}</td>
+            <td>{{ guia.cod_empleado }}</td>
+            <td>{{ guia.placa_vehiculo }}</td>
+            <td>{{ guia.tipo_vehiculo }}</td>
+            <td>{{ guia.fecha_de_traslado }}</td>
+            <td>
+            <span [ngClass]="{
+                'entregado': guia.entregado === 'Sí',
+                'pendiente': guia.entregado === 'No'
+            }">{{ guia.entregado }}</span>
+            </td>
+            <td>
+            <button (click)="openDetalle(guia.cod_guia_remision)" class="btn btn-sm btn-info">VER</button>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <!-- Modal de Detalle -->
+  <div *ngIf="showModal" class="modal-overlay">
+    <div class="modal">
+        <h2>DETALLE DE LA GUÍA DE REMISIÓN</h2>
+        <p><strong>Guía:</strong> {{ guiaSeleccionada }}</p>
+
+        <table class="styled-table">
+        <thead>
+            <tr>
+            <th>ID Producto</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let detalle of detalleGuia">
+            <td>{{ detalle.codProducto }}</td>
+            <td>{{ detalle.nombre }}</td>
+            <td>{{ detalle.peso }}</td>
+            <td>{{ detalle.unidad }}</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <div style="text-align: right; margin-top: 10px;">
+        <button (click)="closeModal()" class="btn btn-secondary">Cerrar</button>
+        </div>
+    </div>
+    </div>
+</div>
+

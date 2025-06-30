@@ -1,0 +1,42 @@
+<div class="layout-container">
+    <app-sidebar></app-sidebar>
+
+    <div class="main-content">
+    <h1>REPORTES DE INCIDENTES</h1>
+
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Código Guía</th>
+            <th>Empleado</th>
+            <th>Cliente</th>
+            <th>Responsable</th>
+            <th>DNI Responsable</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let incidente of reporteIncidenteEntregas">
+            <td>{{ incidente.cod_guia_remision }}</td>
+            <td>{{ incidente.cod_empleado }}</td>
+            <td>{{ incidente.cod_cliente }}</td>
+            <td>{{ incidente.nombre_realiza }}</td>
+            <td>{{ incidente.dni_realiza }}</td>
+            <td>{{ incidente.fecha_registro }}</td>
+            <td>{{ incidente.hora_registro }}</td>
+            <td>
+            <span [ngClass]="{
+                'estado-resuelto': incidente.estado === 'Resuelto',
+                'estado-pendiente': incidente.estado !== 'Resuelto'
+            }">{{ incidente.estado }}</span>
+            </td>
+            <td>{{ incidente.descripcion }}</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
