@@ -20,6 +20,7 @@
             <th>Cantidad</th>
             <th>Unidad</th>
             <th>Estado</th>
+            <th>Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -29,12 +30,41 @@
             <td>{{ r.descripcion_lote }}</td>
             <td>{{ r.cantidad }}</td>
             <td>{{ r.unidad }}</td>
+            <td><span class="estado-aprobado">{{ r.estado_recepcion }}</span></td>
             <td>
-              <span class="estado-aprobado">{{ r.estado_recepcion }}</span>
+              <button (click)="abrirFormulario(r.cod_recepcion, 'aprobar')">Aprobar</button>
+              <button (click)="abrirFormulario(r.cod_recepcion, 'observar')">Observar</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <!-- Formulario modal centrado -->
+    <div *ngIf="formularioVisible" class="modal-fondo">
+      <div class="modal">
+        <h3>{{ modo === 'aprobar' ? 'Aprobar Recepción' : 'Observar Recepción' }}</h3>
+
+        <label>ID del Empleado:</label>
+        <input type="number" [(ngModel)]="idEmpleado" />
+
+        <label>Temperatura del Producto:</label>
+        <input type="number" [(ngModel)]="temperatura" />
+
+        <div *ngIf="modo === 'observar'">
+          <label>Observaciones del Lote:</label>
+          <textarea [(ngModel)]="observacionesLote"></textarea>
+
+          <label>Observaciones del Empaque:</label>
+          <textarea [(ngModel)]="observacionesEmpaque"></textarea>
+        </div>
+
+        <div class="botones-formulario">
+          <button (click)="enviarFormulario()">Enviar</button>
+          <button (click)="cerrarFormulario()">Cancelar</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+

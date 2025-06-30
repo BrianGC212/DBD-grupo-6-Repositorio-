@@ -49,6 +49,7 @@ export class VisualizarLotes implements OnInit {
   private recepcionService: RecepcionService,
   private http: HttpClient,
   private cdr: ChangeDetectorRef
+  
 ) {
   this.router.events.pipe(
     filter(event => event instanceof NavigationEnd)

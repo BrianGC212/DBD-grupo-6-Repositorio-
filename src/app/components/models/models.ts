@@ -109,6 +109,35 @@ export interface LoteRecepcionVista {
   unidad: string;
 }
 
+export interface ControlCalidadRequest {
+  idEstadoPaqueteRecepcion: string;
+  temperaturaProducto: number;
+  observacionesLote?: string;
+  observacionesEmpaque?: string;
+  idRecepcion: number;
+  idEmpleado: number;
+}
+
+export interface DetalleRecepcion {
+  cod_recepcion: string;
+  idRecepcion: number;
+}
+
+export interface DetalleRecepcionCalidad {
+  cod_recepcion: string;
+}
+
+export interface RecepcionConId {
+  id_recepcion: number;
+  cod_recepcion: string;
+  nombre_producto: string;
+  descripcion_lote: string;
+  cantidad: number;
+  unidad: string;
+  estado_recepcion: string;
+}
+
+
 export interface OrdenTransporte {
     cod_orden_transporte: string;
     cod_empleado: string;
