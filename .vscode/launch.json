@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LogAgrovApplication<log-agrov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "logistica_agrovision.log_agrov.LogAgrovApplication",
+            "projectName": "log-agrov",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
