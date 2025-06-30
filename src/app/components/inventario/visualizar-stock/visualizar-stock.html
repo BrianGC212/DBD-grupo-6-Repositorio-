@@ -1,0 +1,27 @@
+<div class="main-layout">
+
+    <div class="stock-container">
+        <h2 class="titulo">Visualizar Stock</h2>
+
+        <div class="tabla-contenedor">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre Producto</th>
+                        <th>Stock Disponible</th>
+                        <th>Stock Minimo</th>
+                        <th>Stock Maximo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let stock of stocks">
+                        <td>{{ stock.nombreProducto }}</td>
+                        <td>{{ stock.stockDisponible }}</td>
+                        <td>{{ stock.stockMinimo }}</td>
+                        <td>{{ stock.stockMaximo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+</div>
