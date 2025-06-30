@@ -40,19 +40,22 @@ public class RegistroControlCalidadService {
     }
 
     public void registrarControlCalidadObservado(RegistroControlCalidadDto dto) {
-        String codControlCalidad = generarCodigoControlCalidad();
-
-        String sql = "INSERT INTO Control_de_calidad (" +
-                "cod_control_calidad, fecha_inspeccion, id_estado_paquete_recepcion, temperatura_producto, " +
-                "observaciones_lote, observaciones_empaque, id_estado_control_calidad, id_recepcion, id_empleado) " +
-                "VALUES (?, CURRENT_DATE, ?, ?, ?, ?, 'O', ?, ?)";
-
-        jdbcTemplate.update(sql, codControlCalidad,
-                dto.getIdEstadoPaqueteRecepcion(),
-                dto.getTemperaturaProducto(),
-                dto.getObservacionesLote(),
-                dto.getObservacionesEmpaque(),
-                dto.getIdRecepcion(),
-                dto.getIdEmpleado());
+    try {
+        String codControlCalidad = this.generarCodigoControlCalidad();
+        String sql = "INSERT INTO Control_de_calidad (cod_control_calidad, fecha_inspeccion, id_estado_paquete_recepcion, temperatura_producto, observaciones_lote, observaciones_empaque, id_estado_control_calidad, id_recepcion, id_empleado) VALUES (?, CURRENT_DATE, ?, ?, ?, ?, 'O', ?, ?)";
+        this.jdbcTemplate.update(sql, new Object[]{
+            codControlCalidad,
+            dto.getIdEstadoPaqueteRecepcion(),
+            dto.getTemperaturaProducto(),
+            dto.getObservacionesLote(),
+            dto.getObservacionesEmpaque(),
+            dto.getIdRecepcion(),
+            dto.getIdEmpleado()
+        });
+    } catch (Exception e) {
+        e.printStackTrace(); // Muestra el error exacto en la consola
+        throw new RuntimeException("Error al registrar control de calidad observado: " + e.getMessage());
     }
+}
+
 }
