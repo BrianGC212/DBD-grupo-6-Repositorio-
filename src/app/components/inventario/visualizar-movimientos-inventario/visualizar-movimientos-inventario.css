@@ -1,0 +1,88 @@
+.main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.movimientos-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.btn-agregar {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #0056b3;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla th, .tabla td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #dddddd;
+}
+
+.tabla th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333333;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla tr:hover {
+    background-color: #f1f1f1;
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #555555;
+}
+
+.loading-spinner p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #777777;
+}

@@ -1,0 +1,39 @@
+<div class="main-layout">
+
+    <div class="movimientos-container">
+        <h2 class="titulo">Movimientos de Inventario</h2>
+
+        <button (click)="irARegistrarMovimiento()" class="btn-agregar">
+            Registrar Movimiento
+
+        </button>
+
+        <div class="tabla-contenedor">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>ID Movimiento</th>
+                        <th>Producto</th>
+                        <th>Tipo Movimiento</th>
+                        <th>Cantidad</th>
+                        <th>Unidad</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let movimiento of movimientosInventario">
+                        <td>{{ movimiento.codMovimientoInventario }}</td>
+                        <td>{{ movimiento.fechaMovimiento }}</td>
+                        <td>{{ movimiento.codLote }}</td>
+                        <td>{{ movimiento.destino }}</td>
+                        <td>{{ movimiento.tipoMovimientoDescripcion }}</td>
+                        <td>{{ movimiento.codEmpleado }}</td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

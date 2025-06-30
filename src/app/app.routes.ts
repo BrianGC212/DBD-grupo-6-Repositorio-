@@ -24,7 +24,9 @@ import { PlanificacionEquipos } from './components/modulo_3/planificacion-equipo
 import { ProgramacionMantenimiento } from './components/modulo_3/programacion-mantenimiento/programacion-mantenimiento';
 import { VisualizarProgramaciones } from './components/modulo_3/visualizar-programaciones/visualizar-programaciones';
 import { HistorialEquipos } from './components/modulo_3/historial-equipos/historial-equipos';
-
+import { ControlInventarios } from './components/inventario/control-inventarios/control-inventarios';
+import { VisualizarMovimientosInventarioComponent} from './components/inventario/visualizar-movimientos-inventario/visualizar-movimientos-inventario';
+import { VisualizarStockComponent } from './components/inventario/visualizar-stock/visualizar-stock';
 
 export const routes: Routes = [
   {
@@ -56,6 +58,9 @@ export const routes: Routes = [
       { path: 'trazabilidad/procesos', component: VisualizarProceso },
       { path: 'trazabilidad/reporte', component: VisualizarReporteTrazabilidad },
       { path: 'trazabilidad/incidencias', component: VisualizarIncidencias},
+      { path: 'control-inventarios', component: ControlInventarios },
+      { path: 'visualizar-movimientos-inventario', component: VisualizarMovimientosInventarioComponent },
+      { path: 'visualizar-stock', component: VisualizarStockComponent } 
     ]
   },
   { path: '**', redirectTo: '' }

@@ -192,3 +192,29 @@ export interface OrdenTransporteInput {
     guiasRemision: string[];
 }
 
+export interface MovimientoInventario {
+    codMovimientoInventario: string;
+    fechaMovimiento: string; // Use string for ISO date, or Date if you prefer
+    codLote: string;
+    destino: string;
+    tipoMovimientoDescripcion: string;
+    codEmpleado: string;
+}
+export interface StockProducto {
+    nombreProducto: string;
+    stockDisponible: number;
+    stockMinimo: number;
+    stockMaximo: number;
+}
+
+export interface AlertaInventario {
+    codAlertaInventario: string;
+    estadoAlerta: string;
+    tipoAlerta: string;
+    severidad: string;
+    descripcion: string;
+    fechaHoraAlerta: string; // Use string for ISO date-time, or Date if you prefer
+    fechaHoraSolucion: string | null;
+    codLote: string;
+    idEmpleado: number;
+}
